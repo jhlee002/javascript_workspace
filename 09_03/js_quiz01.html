@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript연습문제01</title>
+</head>
+<body>
+  <script>
+    // 1번 문제 - 홀,짝 판정
+    let inputNum = prompt("숫자를 입력하세요");
+    if (inputNum % 2 == 0) {
+      console.log("짝수입니다.");
+    } else {
+      console.log("홀수입니다.");
+    }
+  </script>
+  <br>
+  <script>
+    // 2번 문제 - 국어, 영어, 수학 점수를 입력받아서 평균 구하기
+    let kor = parseFloat(prompt("국어 점수를 입력하세요"));
+    let eng = parseFloat(prompt("영어 점수를 입력하세요"));
+    let math = parseFloat(prompt("수학 점수를 입력하세요"));
+    console.log("평균은 " + (kor+eng+math)/3 + "입니다.")
+  </script>
+  <br>
+  <script>
+    // 3번 문제 - 1~100까지 수를 for문을 이용해서 출력
+    for(i=1; i<=100; i++) {
+      console.log(i);
+    }
+  </script>
+  <br>
+  <script>
+    // 4번 문제 - 100~1까지의 수를 for문을 이용해서 출력
+    for(i=100; i>=1; i--) {
+      console.log(i);
+    }
+
+  </script>
+  <br>
+  <script>
+    // 5번 문제 - 구구단 가로 방향으로 출력
+    for(i=1; i<=9; i++) {
+      for(j=2; j<=9; j++) {
+          document.write(`${j} X ${i} = ${j*i} `);
+      }
+      document.write("<br>");
+    }
+  </script>
+
+  
+  
+</body>
+</html>
