@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript연습문제02</title>
+  <script>
+    // 1번 문제 - 정답: 20 (a+=b는 a의 값만 30으로 변동되고, b의 값은 그대로 유지된다.)
+    var a = 10;
+    var b = 20;
+    a += b;
+    alert(b);
+
+    // 2번 문제 - 정답: 10 (a++는 a의 값을 먼저 사용하고 값에 1을 증가시킴, 그러므로 alert()함수가 먼저 실행되고 10이 출력된다.)
+    var a = 10;
+    alert(a++);
+    // 3번 문제 
+    let age = parseInt(prompt("나이를 입력하세요. (숫자만 입력)"));
+
+    if(age<20) {
+      alert("미성년자");
+    } else {
+      alert("성인");
+    }
+
+    // 4번 문제
+    let num1 = parseInt(prompt("숫자를 입력하세요. (1~5)"));
+    switch(num1) {
+      case 1:
+        alert("도");
+        break;
+      case 2:
+        alert("개");
+        break;
+      case 3:
+        alert("걸");
+        break;
+      case 4:
+        alert("윷");
+        break;
+      case 5:
+        alert("모");
+        break;
+      default:
+        alert("잘못된 입력입니다.");
+        break;
+    }
+
+    // 5번 문제 
+    let kor=parseFloat(prompt("국어 점수를 입력하세요"));
+    let math=parseFloat(prompt("수학 점수를 입력하세요"));
+    let eng=parseFloat(prompt("영어 점수를 입력하세요"));
+    let scores=[kor, math, eng];
+    
+    alert(scores);
+    
+    // 6번 문제
+    let scores2=0;
+    let kor2=0;
+    let math2=0;
+    let eng2=0;
+
+    while(true) {
+        scores2 = parseInt(prompt("점수를 입력하세요. (국어, 수학, 영어)"));
+        if(scores2==-1) {
+          break;
+        };
+        kor2=scores2;
+        scores2 = parseInt(prompt("점수를 입력하세요. (국어, 수학, 영어)"));
+        if(scores2==-1) {
+          break;
+        };
+        math2=scores2;
+        scores2 = parseInt(prompt("점수를 입력하세요. (국어, 수학, 영어)"));
+        if(scores2==-1) {
+          break;
+        };
+        eng2=scores2;
+        alert("세 과목 평균은 " + (kor2+math2+eng2)/3);
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>
