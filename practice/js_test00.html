@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript연습00</title>
     <script>
-        console.log("I`m studying JavaScript.");
-        // document.write("I'm studying JavaScript.\n");
-        // document.write("How about you?");
+        // console.log("I`m studying JavaScript.");
+        // // document.write("I'm studying JavaScript.\n");
+        // // document.write("How about you?");
 
-        console.log(parseInt('135.51'));
-        console.log(parseFloat('135.51'));
+        // console.log(parseInt('135.51'));
+        // console.log(parseFloat('135.51'));
 
         // for(i=1; i<20; i++) {
         //     for(j=11; j<20; j++) {
@@ -19,11 +19,30 @@
         //     document.write("<br>");
         // }
 
-        let transNum = Number('0xaaa'); // 16진수 표기도 적용됨
-        console.log(transNum);
+        // let transNum = Number('0xaaa'); // 16진수 표기도 적용됨
+        // console.log(transNum);
 
-        let transNum2 = Number('0b1011');   // 2진수 표기도 적용됨
-        console.log(transNum2);
+        // let transNum2 = Number('0b1011');   // 2진수 표기도 적용됨
+        // console.log(transNum2);
+
+        let scores1=[ ];
+        // let scores2=0;
+        let kor2=0;
+        let math2=0;
+        let eng2=0;
+
+        let i=0;
+        while(scores1[i]!=-1) {
+            if(scores1.length!=3) {
+                scores1[i] = parseInt(prompt("점수를 입력하세요. (국어, 수학, 영어)"));
+                i++;
+            }
+            else {
+                alert("세 과목 평균은 " + (scores1[0]+scores1[1]+scores1[2])/3);
+                scores1=[];
+                i=0;
+            }
+        }
     </script>
 </head>
 <body>
