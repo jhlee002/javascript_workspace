@@ -25,24 +25,36 @@
         // let transNum2 = Number('0b1011');   // 2진수 표기도 적용됨
         // console.log(transNum2);
 
-        let scores1=[ ];    // 점수 저장할 배열 선언
-        let scores2=0;      // 중지값(-1)을 판단할 변수
-        // let kor2=0;
-        // let math2=0;
-        // let eng2=0;
+        // let scores1=[ ];    // 점수 저장할 배열 선언
+        // let scores2=0;      // 중지값(-1)을 판단할 변수
 
-        let i=0;
-        while(scores2!=-1) {
-            if(scores1.length==3) {
-                alert("세 과목 평균은 " + (scores1[0]+scores1[1]+scores1[2])/3);
-                scores1=[];
-                i=0;
-            } else {
-                scores1[i] = parseInt(prompt("점수를 입력하세요. (국어, 수학, 영어)"));
-                scores2 = scores1[i];
-                i++;
+        // let i=0;
+        // while(scores2!=-1) {
+        //     if(scores1.length==3) {
+        //         alert("세 과목 평균은 " + (scores1[0]+scores1[1]+scores1[2])/3);
+        //         scores1=[];
+        //         i=0;
+        //     } else {
+        //         scores1[i] = parseInt(prompt("점수를 입력하세요. (국어, 수학, 영어)"));
+        //         scores2 = scores1[i];
+        //         i++;
+        //     }
+        // }
+
+        // Lotto 생성기 (6개 + 1개)
+        let lotto = [ ];
+        let num0=0, j=0;
+        while(true) {
+            if(j==7) {
+                break;
             }
+            num0 = parseInt(Math.random()*45)+1;
+            if(lotto[j]==num0)
+                continue;
+            lotto[j] = num0;
+            j++
         }
+        console.log(lotto);
     </script>
 </head>
 <body>
