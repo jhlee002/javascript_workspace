@@ -39,6 +39,83 @@
       console.log(colors[i]);
     }
 
+    // 9월 5일 수업 내용
+
+    // Array 사용
+    let numbers = new Array(); // 빈 배열 생성
+    // 배열의 요소 추가
+    numbers[0] = 10;
+    numbers[1] = 20;
+    numbers[2] = 30;
+    numbers[3] = 40;
+    numbers[4] = 50;
+    for(let i=0; i<numbers.length; i++) {
+      console.log(numbers[i]);
+    }
+
+    // concat()
+    let nums=[1,2,3];
+    let chars=['a','b','c','d'];
+    console.log(nums.concat(chars));
+    console.log(nums); // 원본 nums는 변경되지 않음.
+
+    // join()
+    let nums2=[1,2,3];
+    console.log(nums2.join()); // 1,2,3. 기본적으로 콤마(,)로 구분. CSV(Comma Separated Values) 생성.
+    let chars2=['a','b','c','d'];
+    console.log(chars2.join("/")); // a/b/c/d "/"로 구분.
+    console.log(nums2); // 원본 nums2는 변경되지 않음.
+
+    // push()
+    let nums3=[1,2,3];
+    console.log(nums3.push(6)); // push() 함수는 값을 맨 뒤로 추가한 후, 배열의 전체 크기를 리턴(반환)한다.
+    console.log(nums3); // 원본 nums3가 바뀜.
+
+    console.log("----------------------------------");
+
+    // unshift()
+    let nums4=[1,2,3];
+    console.log(nums4.unshift(0)); // unshift() 함수는 값을 맨 앞으로 추가한 후, 배열의 전체 크기를 리턴(반환)한다. 
+    console.log(nums4); // 원본 nums4가 바뀜.
+    console.log(nums4.unshift(-1));
+    console.log(nums4); // 원본 nums4가 바뀜.
+
+    // pop()
+    let nums5=[10,20,30];
+    console.log(nums5.pop()); // 원본 nums5가 바뀜.
+    console.log(nums5);
+
+    // shift()
+    let nums6=[10,20,30];
+    console.log(nums6.shift()); // 원본 nums6가 바뀜.
+    console.log(nums6);
+
+    console.log("----------------------------------");
+
+
+    // splice()
+    let nums7=[10,20,30,40,50];
+    // console.log(nums7.splice(2)); // index 2부터 끝까지 삭제. 배열에서 삭제한 값을 리턴(반환)한다.
+    // console.log(nums7); // 원본 nums7가 바뀜.
+    // console.log(nums7.splice(2,2)); // index 2부터 2개 삭제. 배열에서 삭제한 값을 리턴(반환
+    // console.log(nums7); // 원본 nums7가 바뀜.
+    console.log(nums7.splice(1,2,-1000)); // index 1부터 2개 삭제. 삭제된 위치에 -1000을 추가. 리턴값은 삭제된 값.
+    console.log(nums7); // 원본 nums7가 바뀜.
+
+    console.log("----------------------------------");
+
+    let nums8=[10,20,30,40,50];
+    console.log(nums8.slice(1));  // index 1부터 끝까지 가져옴.
+    console.log(nums8); // 원본 nums8는 변경되지 않음.
+    console.log(nums8.slice(1,3));  // index 1부터 index 3미만(1~2)까지 가져옴.
+    console.log(nums8); // 원본 nums8는 변경되지 않음.
+
+    console.log("----------------------------------");
+
+
+
+
+
   </script>
 </head>
 <body>
