@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript연습문제03</title>
+  <style>
+    #box {
+      width: 100px;
+      height: 100px;
+      border: 1px solid black;
+      background-color:aqua;
+    }
+    .toRight {
+      transform: translateX(500px);
+      transition: transform 1s;
+    }
+  </style>
+  <script>
+
+    // 1번 문제
+    let now = new Date();
+    console.log(Date("YYYY-MM-DD"));
+    console.log(now.getFullYear()+"-"+(now.getMonth()+1)+"-"+now.getDate());
+  
+    console.log("------------------------------------")
+
+    // 2번 문제
+    let randNum = parseInt((Math.random()*20)+1);
+    console.log(randNum);
+
+    console.log("------------------------------------")
+    
+    </script>
+</head>
+<body>
+
+  <!-- 3번 문제 -->
+  <div><button id="btn">구글로 이동</button></div>
+  <br>
+  <script>
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", function(){
+      // window.open("https://www.google.com");
+      location.href="https://www.google.com";
+    });
+  </script>
+  
+  
+  <script>
+
+    // 4번 문제
+    let arr1 = [ ];
+    arr1[0] = 1;
+    arr1[1] = 2;
+    arr1[2] = 3;
+    arr1[3] = 4;
+    arr1[4] = 5;
+    console.log(arr1);
+
+    console.log("------------------------------------")
+
+    // 5번 문제
+    let arr2 = [6, 7, 8, 9, 10];
+    let arr3 = arr1.concat(arr2);
+    console.log(arr3);
+
+    console.log("------------------------------------");
+
+    // 6번 문제
+    let profile = ['이름', '학과', '학년'];
+    let csv = profile.join(',');
+    console.log(csv);
+
+    // 7번 문제
+    // 기존에 존재하던 내장객체를 형판으로 삼아 새로 만들어낸 객체. 원본 객체를 참조하는 객체.
+
+  </script>
+
+  <!-- 8번 문제 -->
+  <div id="box"></div>
+  <br>
+  <button id="btn2">박스 이동</button>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(){
+     
+      let btn2 = document.getElementById("btn2");
+      btn2.addEventListener("click", function(){
+        box.classList.add('toRight');
+      });
+      
+    });
+  </script>
+</body>
+</html>

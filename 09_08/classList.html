@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>classList연습</title>
+  <style>
+    .disabled {
+      color:#ccc;
+      background-color: #f0f0f0;
+      border: 1px solid #ccc;
+    }
+    .enabled {
+      color: #fff;
+      background-color: #007bff;
+      border: 1px solid #007bff;
+    }
+  </style>
+  <script>
+    //문서의 컨텐츠가 로딩된 다음에 실행
+    document.addEventListener("DOMContentLoaded", function(){
+      const checkbox1 = document.getElementById("agree");
+      const proceedButton = document.getElementById("proceed");
+
+      checkbox1.addEventListener("change", function(){
+        // if(checkbox1.checked) {
+        //   proceedButton.classList.add("enable");
+        //   proceedButton.classList.remove("disable");
+        // } else {
+        //   proceedButton.classList.add("disable");
+        //   proceedButton.classList.remove("enable");
+        // }
+
+        // toggle() 활용
+        proceedButton.classList.toggle("enabled", this.checked);
+        proceedButton.classList.toggle("disabled", !this.checked);
+        proceedButton.disabled = !this.checked;
+      });
+    });
+  </script>
+</head>
+<body>
+  <input type="checkbox" id="agree">필수 항목 동의
+  <div>
+    <button id="proceed">다음으로 진행</button> 
+  </div>
+</body>
+</html>

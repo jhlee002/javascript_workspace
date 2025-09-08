@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DOM연습02</title>
+</head>
+<body>
+  <div>
+    <hi>DOM연습02</hi>
+    <div style="height:2000px;">box</div>
+    <div>
+      <img src="/img/cat.jpg" alt="cat" id="cat">
+    </div>
+  </div>
+  <script>
+    let cat = document.querySelector('#cat');
+
+    // event 처리 시에 anonymous function 사용. click 이벤트가 발생하면 시스템에서 직접 익명함수 호출.
+    // cat.onclick = () => alert("이미지를 클릭했습니다.") // 최근에 많이 사용.
+    // cat.onclick = function() {
+    //   alert("이미지를 클릭함");
+    // };
+
+    // function alertFnc() {
+    //   alert("이미지를 클릭함");
+    // }
+    // cat.onclick = alertFnc; // 함수의 이름을 전달.
+
+    // click한 좌표구하기
+    cat.onclick = function(event) {
+      let x = event.pageX;  // 전체 문서를 기준으로 X좌표
+      let y = event.pageY;  // 전체 문서를 기준으로 Y좌표
+      console.log(x, y);
+      let x2 = event.clientX; // 현재 보이는 화면을 기준으로 X좌표
+      let y2 = event.clientY; // 현재 보이는 화면을 기준으로 Y좌표
+      console.log(x2, y2);
+    }
+
+    // cat.onclick = function(event) {
+    //   alert(`이미지 파일 : ${this.src}`); // this는 이벤트가 발생한 태그를 가리키는 레퍼런드.
+    // };
+
+    </script>
+    
+    <div>
+      <img src="/img/kitty-1.png" alt="cat" id="cat2">
+    </div>
+
+    <script>
+      let cat2 = document.getElementById("cat2");
+      // 'mouseover'와 'mouseout'은 'hover'기능과 비슷하다.
+      cat2.addEventListener("mouseover", function(){ 
+        cat2.src = "/img/kitty-2.png";
+      });
+      cat2.addEventListener("mouseout", function(){
+        cat2.src = "/img/kitty-1.png";
+      });
+      // cat2.addEventListener("mouseover", () => {
+      //   cat2.src = "/img/kitty-2.png";
+      // });
+      // cat2.addEventListener("mouseout", () => {
+      //   cat2.src = "/img/kitty-1.png";
+      // });
+
+    </script>
+
+</body>
+</html>
