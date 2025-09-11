@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript연습문제04</title>
+  <script>
+    // 1번 문제
+    var id="hongkildong";
+    console.log(id.length);
+
+
+    // 2번 문제
+    const pNum = prompt("주민등록번호 앞자리(6자리)를 입력하세요");
+    
+    let year=parseInt(pNum.slice(0,2));
+    let month=pNum.slice(2,4);
+    let day=pNum.slice(4,6);
+    
+    if(year>40) {
+      year+=1900;
+    } else {
+      year+=2000;
+    }
+
+    alert(year+"년 "+month+"월 "+day+"일");
+    
+    console.log("---------------------");
+
+
+    // 3번 문제
+    let phNum = '010-1234-5678';
+    let phNum2 = phNum.split("-");
+
+    console.log(phNum2);
+
+    for(let i=0; i<phNum2.length; i++) {
+      console.log(phNum2[i]);
+    };
+    
+    console.log("---------------------");
+
+
+    // 4번 문제
+    let phNum3=phNum.split("-").join("");
+    console.log(phNum3);
+
+    console.log("---------------------");
+
+
+    // 5번 문제
+    let sonata = {
+      color:"brightGray",
+      price:"28000000",
+      year:"2023"
+    };
+    console.log(sonata);
+
+    console.log("---------------------");
+
+
+    // 6번 문제
+    let kor=parseInt(prompt("국어 점수를 입력하세요"));
+    let eng=parseInt(prompt("영어 점수를 입력하세요"));
+    let math=parseInt(prompt("수학 점수를 입력하세요"));
+
+    alert("평균은 " + average(kor, eng, math) + "점 입니다.");
+
+    function average(kor, eng, math) {
+      return (kor+eng+math)/3;
+    };
+
+
+    // 7번 문제
+    let p_id = prompt("아이디를 입력하세요");
+    if(p_id.length<8 || p_id.length>12) {
+      alert("ID는 8~12자리 사이로 입력해주세요.")
+    } else {
+      alert("사용 가능한 ID입니다.");
+    };
+    
+
+    // 8번 문제
+    let email = prompt("이메일을 입력하세요 (@포함)");
+    if(!email.includes("@")) {
+      alert("이메일 형식이 올바르지 않습니다.");
+    };
+    
+  </script>
+</head>
+<body>
+
+</body>
+</html>
