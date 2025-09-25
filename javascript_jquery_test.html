@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JavaScript,jquery 시험</title>
+  
+  <style>
+    /* 1번 문제 */
+    .disappear{
+      display:none;
+    }  
+  </style>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  
+  <script>
+    
+    document.addEventListener('DOMContentLoaded', function(){
+      // 1번 문제
+      const btn1 = document.getElementById('btn1');
+      btn1.addEventListener('click', function(){
+        const h1 = document.querySelector('h1');
+        h1.classList.add('disappear');
+      });
+
+      // 2번 문제
+      let title = document.querySelector('#title');
+      title.addEventListener("mouseover", () => {
+        title.textContent='자바스크립트';
+      });
+      title.addEventListener("mouseout", () => {
+        title.textContent='javascript';
+      });
+    });
+    
+        $(document).ready(function(){
+      // 3번 문제
+      $("#base").prev().css({"color": "red"});
+
+      // 4번 문제
+      $.ajax({
+        url:"member.json",
+        success:function(data){
+          let str=data[0].name+","
+                  +data[0].age+","
+                  +data[0].tel;
+          let str2=data[1].name+","
+                  +data[1].age+","
+                  +data[1].tel;
+          let str3=data[2].name+","
+                  +data[2].age+","
+                  +data[2].tel;
+          $("#box1").text(str)
+                    .append('<br>')
+                    .append(str2)
+                    .append('<br>')
+                    .append(str3);
+        }
+      });
+    });
+
+  </script>
+
+</head>
+<body>
+  <button id="btn1">btn1</button>
+  <h1>JavaScript</h1>
+
+  <br>
+
+  <h1 id="title">javascript</h1>
+
+  <br>
+
+  <div class="container">
+    <div>div 요소</div>
+    <div>div 요소</div>
+    <div>div 요소</div>
+    <div id="base">div 요소</div>
+    <div>div 요소</div>
+    <div>div 요소</div>
+    <div>div 요소</div>
+  </div>
+
+  <br>
+
+  <div id="box1"></div>
+
+</body>
+</html>
